@@ -33,4 +33,11 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 19/11/2019
 
 -installer anconda (a)
--travaillé sur jupyter Notebook (a)
+-travaillé avec python sur jupyter Notebook (a)
+-exercice condition variable (se référer à cour python.html)
+
+20/11/2019
+
+-exercie boucle for, while (se référer à cour python.html)
+-crée un algorithme pour recevoire et donnée un cadeau (se référer à cour python.html)
+ 
