@@ -13079,7 +13079,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># import math pour importé une biblioteque</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 
     </div>
@@ -13092,9 +13092,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># trouvé la solution de 3x**2-7x=23</span>
-
-<span class="n">a</span><span class="o">=</span><span class="mi">3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
 <span class="n">b</span><span class="o">=-</span><span class="mi">7</span>
 <span class="n">c</span><span class="o">=-</span><span class="mi">23</span>
 <span class="n">delta</span><span class="o">=</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
@@ -13206,10 +13204,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;il y a une fonction qui renvoie le plus grand diviseur commun à a et b trouver la forme irréductible de la</span>
-<span class="sd">somme:217/440 + 101/256 + 86/71&quot;&quot;&quot;</span>
-
-<span class="n">d</span><span class="o">=</span><span class="mi">440</span><span class="o">*</span><span class="mi">256</span><span class="o">*</span><span class="mi">71</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="mi">440</span><span class="o">*</span><span class="mi">256</span><span class="o">*</span><span class="mi">71</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
@@ -13306,10 +13301,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Ecrire un programme qui, à partir de la saisie d/un rayon et d/une hauteur, calclue le volume d/un cône </span>
-<span class="sd">droit(utulisé l/instruction input pour saisir les valeurs et print pour afficher le resultat)&quot;&quot;&quot;</span>
-
-<span class="n">R</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;quelle est le rayon&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;quelle est le rayon&#39;</span><span class="p">))</span>
 <span class="n">h</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;quelle est la hauteur&#39;</span><span class="p">))</span>
 <span class="n">v</span><span class="o">=</span><span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -13345,10 +13337,7 @@ quelle est la hauteur6
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Etant donné les longueurs des coté d/un triangle(hypoténuse, coté adjacent ) écrire un programme qui vérifie</span>
-<span class="sd">si un triangle est réctangle&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">math</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span> <span class="s2">&quot; entrez un nombre : &quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">a</span><span class="o">%</span><span class="k">2</span> == 0:
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;paire&quot;</span><span class="p">)</span>
@@ -13432,10 +13421,7 @@ c est l&#39;hypoténuse
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Créer un programme qui donne le prix TTC  aprés avoir saisie le prix HT. Ce programme doit se répéter entrer</span>
-<span class="sd">plusieur prix à la suite et ne s/arrêtter que si l/utulisateur rentre 0&quot;&quot;&quot;</span>
-
-<span class="n">x</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;entrez la valeur TTC&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;entrez la valeur TTC&quot;</span><span class="p">))</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mf">1.2</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;prix TTC est:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
@@ -13452,9 +13438,7 @@ c est l&#39;hypoténuse
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Ecrire un programme qui vérifie si la liste[1,2,3,4,3,2,1] est palaindrome&quot;&quot;&quot;</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="n">x</span><span class="o">=</span><span class="mi">0</span>
@@ -13542,15 +13526,11 @@ C&#39;est un palindrome(for)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Proposer un petit programme en Python qui à partir de la liste des personnes de Simplon (aprenant et équipe</span>
-<span class="sd">pédagogique incluse) tire au hasard (on sait que les machines propose du pseudo aléatoire, mais faisons com si)</span>
-<span class="sd">deu nom pour proposer l&#39;échange de cadeaux&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="nb">list</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;Samba Cisse&quot;</span><span class="p">,</span> <span class="s2">&quot;Rafk Lachaal&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonathan Michel&quot;</span><span class="p">,</span> <span class="s2">&quot;Hachem Mosbah&quot;</span><span class="p">,</span> <span class="s2">&quot;Ines Dridi&quot;</span><span class="p">,</span> <span class="s2">&quot;Ludovic Randon&quot;</span><span class="p">,</span> <span class="s2">&quot;Yoann Lucido&quot;</span><span class="p">,</span> <span class="s2">&quot;Noemie Sauer&quot;</span><span class="p">,</span> <span class="s2">&quot;Sabine Nasr&quot;</span><span class="p">,</span> <span class="s2">&quot;Romain Grimaldi&quot;</span><span class="p">,</span> <span class="s2">&quot;Sacha Kojic&quot;</span><span class="p">,</span> <span class="s2">&quot;Joshua Harris&quot;</span><span class="p">,</span> <span class="s2">&quot;Dylan Poinsu&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniel Kaddous&quot;</span><span class="p">,</span> <span class="s2">&quot;Yacine Bourezak&quot;</span><span class="p">,</span> <span class="s2">&quot;Denys Pes&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonathan Belletrud&quot;</span><span class="p">,</span> <span class="s2">&quot;lotfi Baya&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">list</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;Samba Cisse&quot;</span><span class="p">,</span> <span class="s2">&quot;Rafk Lachaal&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonathan Michel&quot;</span><span class="p">,</span> <span class="s2">&quot;Hachem Mosbah&quot;</span><span class="p">,</span> <span class="s2">&quot;Ines Dridi&quot;</span><span class="p">,</span> <span class="s2">&quot;Ludovic Randon&quot;</span><span class="p">,</span> <span class="s2">&quot;Yoann Lucido&quot;</span><span class="p">,</span> <span class="s2">&quot;Noemie Sauer&quot;</span><span class="p">,</span> <span class="s2">&quot;Sabine Nasr&quot;</span><span class="p">,</span> <span class="s2">&quot;Romain Grimaldi&quot;</span><span class="p">,</span> <span class="s2">&quot;Sacha Kojic&quot;</span><span class="p">,</span> <span class="s2">&quot;Joshua Harris&quot;</span><span class="p">,</span> <span class="s2">&quot;Dylan Poinsu&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniel Kaddous&quot;</span><span class="p">,</span> <span class="s2">&quot;Yacine Bourezak&quot;</span><span class="p">,</span> <span class="s2">&quot;Denys Pes&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonathan Belletrud&quot;</span><span class="p">,</span> <span class="s2">&quot;Hachem Baya&quot;</span><span class="p">]</span>
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
        
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -13573,24 +13553,24 @@ C&#39;est un palindrome(for)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Jonathan Michel donne son cadeau à Noemie Sauer
-Noemie Sauer donne son cadeau à Samba Cisse
-Samba Cisse donne son cadeau à Hachem Mosbah
-Hachem Mosbah donne son cadeau à Sabine Nasr
-Sabine Nasr donne son cadeau à Ines Dridi
-Ines Dridi donne son cadeau à Yoann Lucido
-Yoann Lucido donne son cadeau à lotfi Baya
-lotfi Baya donne son cadeau à Daniel Kaddous
-Daniel Kaddous donne son cadeau à Ludovic Randon
-Ludovic Randon donne son cadeau à Romain Grimaldi
-Romain Grimaldi donne son cadeau à Joshua Harris
-Joshua Harris donne son cadeau à Yacine Bourezak
-Yacine Bourezak donne son cadeau à Rafk Lachaal
-Rafk Lachaal donne son cadeau à Jonathan Belletrud
-Jonathan Belletrud donne son cadeau à Dylan Poinsu
-Dylan Poinsu donne son cadeau à Sacha Kojic
-Sacha Kojic donne son cadeau à Denys Pes
-Denys Pes donne son cadeau à Jonathan Michel
+<pre>Yacine Bourezak donne son cadeau à Dylan Poinsu
+Dylan Poinsu donne son cadeau à Ludovic Randon
+Ludovic Randon donne son cadeau à Yoann Lucido
+Yoann Lucido donne son cadeau à Sabine Nasr
+Sabine Nasr donne son cadeau à Jonathan Michel
+Jonathan Michel donne son cadeau à Denys Pes
+Denys Pes donne son cadeau à Sacha Kojic
+Sacha Kojic donne son cadeau à Jonathan Belletrud
+Jonathan Belletrud donne son cadeau à Hachem Mosbah
+Hachem Mosbah donne son cadeau à Ines Dridi
+Ines Dridi donne son cadeau à Joshua Harris
+Joshua Harris donne son cadeau à Romain Grimaldi
+Romain Grimaldi donne son cadeau à Noemie Sauer
+Noemie Sauer donne son cadeau à Daniel Kaddous
+Daniel Kaddous donne son cadeau à Rafk Lachaal
+Rafk Lachaal donne son cadeau à Hachem Baya
+Hachem Baya donne son cadeau à Samba Cisse
+Samba Cisse donne son cadeau à Yacine Bourezak
 </pre>
 </div>
 </div>
