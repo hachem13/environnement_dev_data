@@ -5,6 +5,7 @@
 - installer ubuntu18.04 en double boot
 PB: La mise à jour catalina ne permet pas de l'installer 
 solution: installer ubuntu en virtual (virtualbox) 
+
 PB: ubuntu ne s'install pas correctement 
 solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 
@@ -41,3 +42,4 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 -exercie boucle for, while (se référer à cour python.html)
 -crée un algorithme pour recevoire et donnée un cadeau (se référer à cour python.html)
  
+
