@@ -35,11 +35,19 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 
 -installer anconda (a)
 -travaillé avec python sur jupyter Notebook (a)
--exercice condition variable (se référer à cour python.html)
+-exercice condition variable (se référer à cour python)
 
 20/11/2019
 
--exercie boucle for, while (se référer à cour python.html)
--crée un algorithme pour recevoire et donnée un cadeau (se référer à cour python.html)
+-exercie boucle for, while (se référer à cour python)
+-crée un algorithme pour recevoire et donnée un cadeau (se référer à cour python)
+
+21/11/2019
+
+-les étapes de construction d'un modéle 
+- le contexte de l'analyse
+	-analyse univarié
+-les graphiques
+-exercice (se référer à cour python)
  
 
