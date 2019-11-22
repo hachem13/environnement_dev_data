@@ -49,5 +49,6 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 	-analyse univarié
 -les graphiques
 -exercice (se référer à cour python)
+-
  
 
