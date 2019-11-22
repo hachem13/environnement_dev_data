@@ -66,7 +66,7 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 
 - les graphiques
 
--exercice (se référer à cour python)
+- exercice (se référer à cour python)
 
 22/11/2019
  
