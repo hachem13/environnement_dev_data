@@ -76,6 +76,6 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 
 - modélisation d'une base de données
 
-- le recensement des données (voir exercice recensement.xlsx)
+- le recensement des données (voir exercice recensement.pdf)
 
 - Gestion de base de données 
