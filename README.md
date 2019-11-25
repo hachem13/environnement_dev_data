@@ -62,7 +62,7 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 
 - le contexte de l'analyse
 
-	-analyse univarié
+	- analyse univarié
 
 - les graphiques
 
