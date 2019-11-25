@@ -71,3 +71,11 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 22/11/2019
  
 - revision
+
+25/11/2019
+
+- modélisation d'une base de données
+
+- le recensement des données (voir exercice recensement.xlsx)
+
+- Gestion de base de données 
