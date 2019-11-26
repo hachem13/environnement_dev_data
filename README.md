@@ -79,3 +79,12 @@ solution: mettre une ram de 4Gb au lieu que 2Gb recommander (a)
 - le recensement des données (voir exercice recensement.pdf)
 
 - Gestion de base de données 
+
+- Exercice (voir dev_data.sql)
+
+26/11/2019
+
+- Modéle concéptuel de données
+
+- Exercices (fichier exercice concéptuel de données)
+- 
