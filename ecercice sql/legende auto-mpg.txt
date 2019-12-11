@@ -1,0 +1,9 @@
+1. mpg: continu
+2. cylindres: discret multi-valeurs
+3. déplacement: continu
+4. puissance: continue
+5. poids: continu
+6. accélération: continue
+7. année de modèle: discret à valeurs multiples
+8. origine: discret multi-valeurs
+9. nom de la voiture: chaîne (unique pour chaque instance)
