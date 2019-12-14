@@ -1,4 +1,5 @@
 1. afficher tous les emprunt ayant été réalisé en 2006; le mois doit être écrit en toute lettre et le résultat doit s'afficher dans une seule colonne :
+
 SELECT CASE MONTH(rental_date)
          WHEN 1 THEN 'janvier'
          WHEN 2 THEN 'février'
