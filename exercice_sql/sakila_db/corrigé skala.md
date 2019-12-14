@@ -14,29 +14,54 @@ SELECT CASE MONTH(rental_date)
          ELSE 'décembre'
 END
 FROM rental WHERE  year (rental_date) = 2006 ;
+
+
 2. afficher la colonne qui donne la durée de location des film en jour:
+
 SELECT DATEDIFF( return_date, rental_date ) FROM rental;
+
+
 3. afficher les emprunts réalisés avant 1h du matin en 2005. Afficher la date dans un format lisible
+
 SELECT rental_date FROM rental WHERE year (rental_date) = 2005 AND hour (rental_date) < 01;
+
+
 4. afficher les emprunts réalisé entre le mois d'avril et le mois de mai. La liste doit trié du plus ancien au plus récent 
+
 SELECT rental_date FROM rental where month (rental_date) between 04 and 05 order by rental_date;
+
   
 5. lister les film dont le nom ne commence pas par le "le"
+
 SELECT title from film WHERE title  NOT LIKE 'le%';
+
+
 6. Lister les films ayant la mention « PG-13 » ou « NC-17 ». Ajouter une colonne qui
 affichera « oui » si « NC-17 » et « non » Sinon
+
 SELECT title,
  CASE (rating)
 	when 'NC-17' THEN 'oui'
     when 'PG-13' then 'non'
 end from film;
+
+
 7. Fournir la liste des catégorie qui commence par un ‘A’ ou un ‘C’. (Utiliser LEFT)
+
 SELECT name FROM category 
 WHERE (LEFT(name,1)='A') OR (LEFT(name,1)='C');
+
+
 8. Lister les trois premiers caractères des noms des catégorie
+
 SELECT LEFT(name,3) FROM category ;
+
+
 9. Lister les premiers acteurs en remplaçant dans leur prénom les E par des A
+
+
 1. Lister les 10 premiers films ainsi que leur langues.
+
 select title, name as langue
 	from film
     left join language
@@ -45,6 +70,7 @@ select title, name as langue
     
     
 2. Afficher les film dans les quel à joué « JENNIFER DAVIS » sortie en 2006.
+
 select title, first_name, last_name
 	from film
     inner join film_actor
@@ -53,7 +79,10 @@ select title, first_name, last_name
     on film_actor.actor_id = actor.actor_id
     where concat(first_name, ' ', last_name) like 'JENNIFER DAVIS';
     where first_name like 'JENNIFER' and last_name like 'DAVIS';
+
+
 3. Afficher le noms des client ayant emprunté « ALABAMA DEVIL ».
+
 select first_name, last_name, title
 	from customer
     inner join rental
@@ -67,6 +96,7 @@ select first_name, last_name, title
     
     
 4. Afficher les films louer par des personne habitant à « Woodridge ».
+
 select city, first_name, last_name, title
 	from customer
     inner join address
@@ -80,6 +110,7 @@ select city, first_name, last_name, title
     inner join film
     on inventory.film_id = film.film_id
     where city like 'Woodrige';
+
 4.bis. Vérifié s’il y a des films qui n’ont jamais été emprunté.
 select distinct title, inventory.inventory_id
 	from film
@@ -91,6 +122,7 @@ select distinct title, inventory.inventory_id
     
     
 5. Quel sont les 10 films dont la durée d’emprunt à été la plus courte ?
+
 select distinct title, datediff(return_date, rental_date) as duree_de_location
 	from film
     inner join inventory
@@ -103,6 +135,7 @@ select distinct title, datediff(return_date, rental_date) as duree_de_location
 
     
 6. Lister les films de la catégorie « Action » ordonnés par ordre alphabétique.
+
 select title, category.name
 	from film
 	inner join film_category
@@ -110,9 +143,10 @@ select title, category.name
     inner join category
     on film_category.category_id = category.category_id
     where category.name like 'Action';
-    
+
 
 7. Quel sont les films dont la duré d’emprunt à été inférieur à 2 jour ?
+
 select distinct title, datediff(return_date, rental_date) as duree_de_location
 	from film
     inner join inventory
