@@ -60,6 +60,8 @@ SELECT LEFT(name,3) FROM category ;
 
 9. Lister les premiers acteurs en remplaçant dans leur prénom les E par des A
 
+SELECT REPLACE( 'first_name' ,'E', 'A') AS frist_name_A_E, last_name FROM actor LIMIT 10 ;
+
 
 1. Lister les 10 premiers films ainsi que leur langues.
 
