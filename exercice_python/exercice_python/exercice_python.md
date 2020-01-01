@@ -88,7 +88,7 @@ print(v)
 
 
 ```python
-"""Etant donné les longueurs des coté d/un triangle(hypoténuse, coté adjacent ) écrire un programme qui vérifie
+"""Etant donné les longueurs des coté d'un triangle(hypoténuse, coté adjacent ) écrire un programme qui vérifie
 si un triangle est réctangle"""
 
 import math
@@ -100,7 +100,7 @@ else:
 ```
 
      entrez un nombre : 3
-    impair
+    impaire
 
 
 
@@ -130,14 +130,32 @@ else:
 
 ```python
 """Créer un programme qui donne le prix TTC  aprés avoir saisie le prix HT. Ce programme doit se répéter entrer
-plusieur prix à la suite et ne s/arrêtter que si l/utulisateur rentre 0"""
+plusieur prix à la suite et ne s'arrêtter que si l'utulisateur rentre 0"""
 
-x= float(input("entrez la valeur TTC"))
+x = 0
+a = x*1.2
+x = float(input("entrez la valeur HT"))
 while x != 0:
-    x = x*1.2
-    print("prix TTC est:",x)
+    x = float(input("entrez la valeur HT"))
+    a = x*1.2
+    print("prix TTC est:",a)
+    
 print("fin")
+    
+
 ```
+
+    entrez la valeur HT1
+    entrez la valeur HT2
+    prix TTC est: 2.4
+    entrez la valeur HT3
+    prix TTC est: 3.5999999999999996
+    entrez la valeur HT4
+    prix TTC est: 4.8
+    entrez la valeur HT0
+    prix TTC est: 0.0
+    fin
+
 
 
 ```python
@@ -202,24 +220,24 @@ for i in range(len(list)-1):
 print(list[-1], "donne son cadeau à", list[0])
 ```
 
-    Jonathan Michel donne son cadeau à Noemie Sauer
-    Noemie Sauer donne son cadeau à Samba Cisse
-    Samba Cisse donne son cadeau à Hachem Mosbah
-    Hachem Mosbah donne son cadeau à Sabine Nasr
-    Sabine Nasr donne son cadeau à Ines Dridi
-    Ines Dridi donne son cadeau à Yoann Lucido
-    Yoann Lucido donne son cadeau à lotfi Baya
-    lotfi Baya donne son cadeau à Daniel Kaddous
-    Daniel Kaddous donne son cadeau à Ludovic Randon
-    Ludovic Randon donne son cadeau à Romain Grimaldi
-    Romain Grimaldi donne son cadeau à Joshua Harris
-    Joshua Harris donne son cadeau à Yacine Bourezak
-    Yacine Bourezak donne son cadeau à Rafk Lachaal
-    Rafk Lachaal donne son cadeau à Jonathan Belletrud
-    Jonathan Belletrud donne son cadeau à Dylan Poinsu
-    Dylan Poinsu donne son cadeau à Sacha Kojic
-    Sacha Kojic donne son cadeau à Denys Pes
+    Hachem Mosbah donne son cadeau à lotfi Baya
+    lotfi Baya donne son cadeau à Joshua Harris
+    Joshua Harris donne son cadeau à Noemie Sauer
+    Noemie Sauer donne son cadeau à Romain Grimaldi
+    Romain Grimaldi donne son cadeau à Sabine Nasr
+    Sabine Nasr donne son cadeau à Daniel Kaddous
+    Daniel Kaddous donne son cadeau à Sacha Kojic
+    Sacha Kojic donne son cadeau à Jonathan Belletrud
+    Jonathan Belletrud donne son cadeau à Samba Cisse
+    Samba Cisse donne son cadeau à Ludovic Randon
+    Ludovic Randon donne son cadeau à Yacine Bourezak
+    Yacine Bourezak donne son cadeau à Rafik Lachaal
+    Rafik Lachaal donne son cadeau à Ines Dridi
+    Ines Dridi donne son cadeau à Dylan Poinsu
+    Dylan Poinsu donne son cadeau à Denys Pes
     Denys Pes donne son cadeau à Jonathan Michel
+    Jonathan Michel donne son cadeau à Yoann Lucido
+    Yoann Lucido donne son cadeau à Hachem Mosbah
 
 
 
@@ -231,7 +249,7 @@ import pandas as pd #importer pandas
 liste=["mpg","cylindres","déplacement","puissance","poids","accélération","année de modèle","origine",
 "nom de la voiture)"] #crée une liste
 
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
+auto=pd.read_excel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python/exercice_python/autompg.xlsx', sep= '\t', names =liste)
 
 
 print(auto)
@@ -271,7 +289,7 @@ print(auto)
 #produire les statistiques decrivant les données:
 
 import pandas as pd #importer pandas
-import matplotlib as plt #importer mathplitlib
+import matplotlib as plt #importer mathplotlib
 
 
 liste=["mpg","cylindres","déplacement","puissance","poids","accélération","année de modèle","origine",
@@ -280,11 +298,10 @@ import pandas as pd #importer pandas
 import matplotlib as plt #importer mathplitlib
 
 liste=["mpg","cylindres","déplacement","puissance","poids","accélération","année de modèle","origine",
-"nom de la voiture)"] #crée une liste
-plt.pyplot.figure(figsize=(10,10))#pour gérer la taille du graphique                  
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
-auto['année de modèle'].value_counts().plot.pie()#diagramme à secteur 
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
+"nom de la voiture)"] #crée une liste                 
+auto=pd.read_excel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python/exercice_python/autompg.xlsx', sep= '\t', names =liste)
+
+
 
 
 
@@ -323,10 +340,6 @@ print(auto.describe(include='all'))
 
 
 
-![png](output_16_1.png)
-
-
-
 ```python
 #produire les graphiques adapter au données:
 
@@ -337,15 +350,14 @@ import matplotlib as plt #importer mathplitlib
 liste=["mpg","cylindres","déplacement","puissance","poids","accélération","année de modèle","origine",
 "nom de la voiture)"] #crée une liste
 
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
+auto=pd.read_excel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python/exercice_python/autompg.xlsx', sep= '\t', names =liste)
 auto.hist(column='mpg')#histograme
-
 ```
 
 
 
 
-    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x7efc200759d0>]],
+    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x1182a3b10>]],
           dtype=object)
 
 
@@ -363,14 +375,14 @@ import matplotlib as plt #importer mathplitlib
 liste=["mpg","cylindres","déplacement","puissance","poids","accélération","année de modèle","origine",
 "nom de la voiture)"] #crée une liste
 
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
+auto=pd.read_excel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python/exercice_python/autompg.xlsx', sep= '\t', names =liste)
 auto['mpg'].plot.kde()#density plot
 ```
 
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7efc1ed234d0>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a1c3bdb90>
 
 
 
@@ -387,15 +399,14 @@ liste=["mpg","cylindres","déplacement","puissance","poids","accélération","an
 "nom de la voiture)"] #crée une liste
 
 plt.figure(figsize=(7,7))#pour gérer la taille du graphique 
-auto=pd.read_excel('/home/hachem/Documents/autompg.xlsx', sep= '\t', names =liste)
+auto=pd.read_excel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python/exercice_python/autompg.xlsx', sep= '\t', names =liste)
 auto['année de modèle'].value_counts().plot.pie()#diagramme à secteur 
-
 ```
 
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fcb00bec210>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a1c455f90>
 
 
 
