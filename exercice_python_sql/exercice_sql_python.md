@@ -119,7 +119,6 @@ importcsv('https://www.data.gouv.fr/fr/datasets/r/377fd07c-e37f-491a-a507-7bf5b6
 
 ```python
 from sqlalchemy import create_engine
-from sqlalchemy import create_engine
 import pandas as pd
 import time
 
@@ -146,8 +145,93 @@ importcsv('https://www.data.gouv.fr/fr/datasets/r/09af65ff-c1c6-40bb-bfcb-b80f7a
 
 
 
-```python
+    ---------------------------------------------------------------------------
 
+    KeyboardInterrupt                         Traceback (most recent call last)
+
+    <ipython-input-33-c78731b6d07a> in <module>
+         20 
+         21 
+    ---> 22 importcsv('https://www.data.gouv.fr/fr/datasets/r/09af65ff-c1c6-40bb-bfcb-b80f7ac93b72', 'historique_etablissement', ['dateFin', 'dateDebut'])
+    
+
+    <ipython-input-33-c78731b6d07a> in importcsv(link, table, date)
+         10     start_time = time.time()
+         11     csize = 300000
+    ---> 12     df = pd.read_csv(link, compression = 'zip', chunksize = csize, parse_dates = date)
+         13     print("Données lu")
+         14     i = csize
+
+
+    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in parser_f(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)
+        683         )
+        684 
+    --> 685         return _read(filepath_or_buffer, kwds)
+        686 
+        687     parser_f.__name__ = name
+
+
+    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in _read(filepath_or_buffer, kwds)
+        438     # See https://github.com/python/mypy/issues/1297
+        439     fp_or_buf, _, compression, should_close = get_filepath_or_buffer(
+    --> 440         filepath_or_buffer, encoding, compression
+        441     )
+        442     kwds["compression"] = compression
+
+
+    ~/anaconda3/lib/python3.7/site-packages/pandas/io/common.py in get_filepath_or_buffer(filepath_or_buffer, encoding, compression, mode)
+        199             # Override compression based on Content-Encoding header
+        200             compression = "gzip"
+    --> 201         reader = BytesIO(req.read())
+        202         req.close()
+        203         return reader, encoding, compression, True
+
+
+    ~/anaconda3/lib/python3.7/http/client.py in read(self, amt)
+        468             else:
+        469                 try:
+    --> 470                     s = self._safe_read(self.length)
+        471                 except IncompleteRead:
+        472                     self._close_conn()
+
+
+    ~/anaconda3/lib/python3.7/http/client.py in _safe_read(self, amt)
+        618         s = []
+        619         while amt > 0:
+    --> 620             chunk = self.fp.read(min(amt, MAXAMOUNT))
+        621             if not chunk:
+        622                 raise IncompleteRead(b''.join(s), amt)
+
+
+    ~/anaconda3/lib/python3.7/socket.py in readinto(self, b)
+        587         while True:
+        588             try:
+    --> 589                 return self._sock.recv_into(b)
+        590             except timeout:
+        591                 self._timeout_occurred = True
+
+
+    ~/anaconda3/lib/python3.7/ssl.py in recv_into(self, buffer, nbytes, flags)
+       1069                   "non-zero flags not allowed in calls to recv_into() on %s" %
+       1070                   self.__class__)
+    -> 1071             return self.read(nbytes, buffer)
+       1072         else:
+       1073             return super().recv_into(buffer, nbytes, flags)
+
+
+    ~/anaconda3/lib/python3.7/ssl.py in read(self, len, buffer)
+        927         try:
+        928             if buffer is not None:
+    --> 929                 return self._sslobj.read(len, buffer)
+        930             else:
+        931                 return self._sslobj.read(len)
+
+
+    KeyboardInterrupt: 
+
+
+
+```python
 import pandas as pd
 
 
@@ -174,8 +258,203 @@ print (liste_1993)
 
 
 ```python
+link = '/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_1993.xls'
+```
+
+
+```python
+df = pd.read_excel(link , skiprows=0,header=1)
+print (df)
+```
+
+       Code                                            Libellé
+    0     A                  Agriculture, chasse, sylviculture
+    1     B                                 Pêche, aquaculture
+    2     C                             Industries extractives
+    3     D                           Industrie manufacturière
+    4     E  Production et distribution d'électricité, de g...
+    5     F                                       Construction
+    6     G  Commerce ; réparations automobile et d'article...
+    7     H                              Hôtels et restaurants
+    8     I                       Transports et communications
+    9     J                              Activités financières
+    10    K   Immobilier, location et services aux entreprises
+    11    L                            Administration publique
+    12    M                                          Education
+    13    N                            Santé et action sociale
+    14    O         Services collectifs, sociaux et personnels
+    15    P                               Services domestiques
+    16    Q                      Activités extra-territoriales
+
+
+
+```python
+df.to_sql('liste_1993', con = engine, if_exists='replace', index = False)
+```
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    df.to_sql('liste_1993', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_1993.xls', 'liste_1993')
 
 ```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    
+    df.to_sql('niveau_1993', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_1993.xls','niveau_1993')
+
+```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    df.to_sql('liste_2003', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_2003.xls','liste_2003')
+```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    df.to_sql('niveau_2003', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2003.xls','niveau_2003')
+```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_2008.xls','liste_2008')
+
+```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0)
+    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2008.xls','niveau_2008')
+
+```
+
+    Lecture des données
+    fin
+
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0,header=1)
+    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2008.xls','niveau_2008')
+
+```
+
+
+```python
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+
+def importexcel(link, table):
+    print("Lecture des données")
+    df = pd.read_excel(link , skiprows=0)
+    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    return print("fin")
+
+importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/NAP_1973_1993.xls','NAP_1973_1993')
+
+```
+
+    Lecture des données
+    fin
+
 
 
 ```python
