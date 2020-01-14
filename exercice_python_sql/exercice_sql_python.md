@@ -177,7 +177,7 @@ link = '/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python
 
 
 ```python
-df = pd.read_excel(link , skiprows=0,header=1)
+df = pd.read_excel(link , skiprows=1,header=1)
 print (df)
 ```
 
@@ -203,7 +203,7 @@ print (df)
 
 
 ```python
-df.to_sql('liste_1993', con = engine, if_exists='replace', index = False)
+df.to_sql('liste_1993', con = engine, if_exists='append', index = False)
 ```
 
 
@@ -215,8 +215,8 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
-    df.to_sql('liste_1993', con = engine, if_exists='replace', index = False)
+    df = pd.read_excel(link , skiprows=1,header=0)
+    df.to_sql('liste_1993', con = engine, if_exists='append', index = False)
     return print("fin")
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_1993.xls', 'liste_1993')
@@ -236,7 +236,7 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
+    df = pd.read_excel(link , skiprows=1,header=0)
     
     df.to_sql('niveau_1993', con = engine, if_exists='replace', index = False)
     return print("fin")
@@ -259,8 +259,8 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
-    df.to_sql('liste_2003', con = engine, if_exists='replace', index = False)
+    df = pd.read_excel(link , skiprows=1,header=1)
+    df.to_sql('liste_2003', con = engine, if_exists='append', index = False)
     return print("fin")
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_2003.xls','liste_2003')
@@ -279,8 +279,8 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
-    df.to_sql('niveau_2003', con = engine, if_exists='replace', index = False)
+    df = pd.read_excel(link , skiprows=1,header=0)
+    df.to_sql('niveau_2003', con = engine, if_exists='append', index = False)
     return print("fin")
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2003.xls','niveau_2003')
@@ -290,17 +290,19 @@ importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_p
     fin
 
 
-
 ```python
 from sqlalchemy import create_engine
 import pandas as pd
 
 engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
-def importexcel(link, table):
+def importexcel(link, table): """definir une variable on 
+    importe pondas et lire le ficher csv specifier le fichier compressé, chunksize pour découpé le 
+    fichier(cartographie des donnée), parse_date specifier que tel
+    et tel colonne  sans on date """ 
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
-    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    df = pd.read_excel(link , skiprows=[1,0],header=0)
+    df.to_sql('liste_2008', con = engine, if_exists='append', index = False)
     return print("fin")
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/liste_2008.xls','liste_2008')
@@ -318,34 +320,10 @@ import pandas as pd
 
 engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
-def importexcel(link, table): """definir une variable on 
-    importe pondas et lire le ficher csv specifier le fichier compressé, chunksize pour découpé le 
-    fichier(cartographie des donnée), parse_date specifier que tel
-    et tel colonne  sans on date """ 
-    print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0)
-    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
-    return print("fin")
-
-importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2008.xls','niveau_2008')
-
-```
-
-    Lecture des données
-    fin
-
-
-
-```python
-from sqlalchemy import create_engine
-import pandas as pd
-
-engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
-
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1) # ne pas prendre en compte l'entete 
-    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
+    df = pd.read_excel(link , skiprows=1,header=1) # ne pas prendre en compte l'entete 
+    df.to_sql('niveau_2008', con = engine, if_exists='append', index = False)
     return print("fin")
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/niveau_2008.xls','niveau_2008')
@@ -361,11 +339,12 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret") """ etabl
 
 def importexcel(link, table): # définition de la fonction importexcel
     print("Lecture des données") # afficher la lecture
-    df = pd.read_excel(link , skiprows=0) """definir une variable on 
-    importe pondas et lire le ficher excel en specifient le lien et sauter la ligne 0 """ 
-    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False) """pour chaque partie on ecrit dans la 
-        base de donné, con = engine c'est tous ce qu'on as avec egine on l'importe sur la table, if_exists='replace '
-        si la table existe on remplace la , index = False il ne faut pas ecrire le numéros de ligne"""
+    df = pd.read_excel(link , skiprows=1) """definir une variable on 
+    importe pondas et lire le ficher excel en specifient le lien et sauter la ligne 1 """ 
+    df.to_sql('liste_2008', con = engine, if_exists='append', index = False) 
+    """ pour chaque partie on ecrit dans la 
+        base de donné, con = engine c'est tous ce qu'on as avec egine on l'importe sur la table, if_exists='append'
+        si la table existe on l'ajoute, index = False il ne faut pas ecrire le numéros de ligne"""
     return print("fin") # affiche fin 
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/NAP_1973_1993.xls','NAP_1973_1993')
