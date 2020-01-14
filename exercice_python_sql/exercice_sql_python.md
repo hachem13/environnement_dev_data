@@ -318,7 +318,10 @@ import pandas as pd
 
 engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
-def importexcel(link, table):
+def importexcel(link, table): """definir une variable on 
+    importe pondas et lire le ficher csv specifier le fichier compressé, chunksize pour découpé le 
+    fichier(cartographie des donnée), parse_date specifier que tel
+    et tel colonne  sans on date """ 
     print("Lecture des données")
     df = pd.read_excel(link , skiprows=0)
     df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
@@ -341,7 +344,7 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
 
 def importexcel(link, table):
     print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0,header=1)
+    df = pd.read_excel(link , skiprows=0,header=1) # ne pas prendre en compte l'entete 
     df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
     return print("fin")
 
@@ -351,16 +354,19 @@ importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_p
 
 
 ```python
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine # importation des librairies
 import pandas as pd
 
-engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret")
+engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret") """ etablire la connection entre python et mysql """
 
-def importexcel(link, table):
-    print("Lecture des données")
-    df = pd.read_excel(link , skiprows=0)
-    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False)
-    return print("fin")
+def importexcel(link, table): # définition de la fonction importexcel
+    print("Lecture des données") # afficher la lecture
+    df = pd.read_excel(link , skiprows=0) """definir une variable on 
+    importe pondas et lire le ficher excel en specifient le lien et sauter la ligne 0 """ 
+    df.to_sql('liste_2008', con = engine, if_exists='replace', index = False) """pour chaque partie on ecrit dans la 
+        base de donné, con = engine c'est tous ce qu'on as avec egine on l'importe sur la table, if_exists='replace '
+        si la table existe on remplace la , index = False il ne faut pas ecrire le numéros de ligne"""
+    return print("fin") # affiche fin 
 
 importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_python_sql/NAP_1973_1993.xls','NAP_1973_1993')
 
