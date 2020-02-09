@@ -339,7 +339,7 @@ engine = create_engine("mysql+pymysql://hachem:tiger@localhost/siret") """ etabl
 
 def importexcel(link, table): # définition de la fonction importexcel
     print("Lecture des données") # afficher la lecture
-    df = pd.read_excel(link , skiprows=1) """definir une variable on 
+    df = pd.read_excel(link , skiprows=0,header = 0) """definir une variable on 
     importe pondas et lire le ficher excel en specifient le lien et sauter la ligne 1 """ 
     df.to_sql('liste_2008', con = engine, if_exists='append', index = False) 
     """ pour chaque partie on ecrit dans la 
@@ -358,4 +358,8 @@ importexcel('/Users/mosbahhachem/Documents/git/environnement_dev_data/exercice_p
 
 ```python
 
+
+
 ```
+
+

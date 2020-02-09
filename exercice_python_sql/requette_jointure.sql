@@ -23,9 +23,9 @@ where libelleCommuneEtablissement like 'MARSEILLE%'
 
 union
 
-select activitePrincipaleEtablissement, siret, LIB_NAP15
+select activitePrincipaleEtablissement, siret, NIV1
 from etablissement
-inner join niveau_2008 on etablissement.activitePrincipaleEtablissement = niveau_2008.N_700
-inner join liste_2008 on niveau_2008.N_700 = liste_2008.LIB_NAP15
-where libelleCommuneEtablissement like 'MARSEILLE%';
+inner join niveau_2008 on etablissement.activitePrincipaleEtablissement = niveau_2008.NIV1
+inner join liste_2008 on niveau_2008.NIV1 = liste_2008.code
+where libelleCommuneEtablissement like 'MARSEILLE%'; 
 
