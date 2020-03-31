@@ -101,12 +101,14 @@ class formulaire:
             self._nom = nom
     def _get_nom(self):
         return   self._nom 
+    nom = property(_get_nom, _set_nom)
     def _set_prenom(self, prenom):
         if str(type(prenom)) == "<class 'str'>":
             prenom = str(prenom)
             self._prenom = prenom
     def _get_prenom(self):
-        return   self._prenom 
+        return   self._prenom
+    prenom = property(_get_prenom, _set_prenom)
     def age(self):
         return 2020 - self._naissance
     def majeur(self):
