@@ -24,8 +24,6 @@ def create_plot():
     # Prépare les trames de données (data frame)
     df = timesData.iloc[:100,:]
 
-    # import graph objects as "go"
-    import plotly.graph_objs as go
 
     # Création de la trame 1
     trace1 = go.Scatter(
